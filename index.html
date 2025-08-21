@@ -179,7 +179,15 @@
 
         // --- CONFIGURATION ---
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-family-inventory';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const firebaseConfig = {
+              apiKey: "AIzaSyA_8cFnXNrcSg-G4-ivTcY-jPONbXgQeOs",
+              authDomain: "familien-inventar.firebaseapp.com",
+              projectId: "familien-inventar",
+              storageBucket: "familien-inventar.firebasestorage.app",
+              messagingSenderId: "1080831931067",
+              appId: "1:1080831931067:web:bb49a97d887e90aa796f9e",
+              measurementId: "G-NDMCF6F0E
+        };
         const familyId = 'shared-family-space'; // For this demo, all users share one space.
         
         // --- FIREBASE INITIALIZATION ---
