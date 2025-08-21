@@ -330,8 +330,17 @@
             if (!html5QrCode) {
                  html5QrCode = new Html5Qrcode("qr-reader");
             }
-            const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-            html5QrCode.start({ facingMode: "environment" }, config, onScanSuccess)
+            const config = {
+                fps: 10,
+                qrbox: { width: 400, height: 400 },
+                experimentalFeatures: { useBarCodeDetectorIfSupported: true }
+            };
+            const cameraConfig = {
+                facingMode: "environment",
+                width: { ideal: 1280 },
+                height: { ideal: 720 }
+            };
+            html5QrCode.start(cameraConfig, config, onScanSuccess)
                 .catch(err => {
                     console.error("Unable to start scanning.", err);
                     showMessage("Kamera konnte nicht gestartet werden. Bitte Berechtigungen prüfen.");
